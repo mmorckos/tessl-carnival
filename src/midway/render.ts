@@ -795,6 +795,21 @@ function person(
 ) {
   const swing = options.swing ?? 0;
   const dir = options.dir ?? 1;
+  if (options.player) {
+    // A soft glow behind the whole body, from the feet to the arrow.
+    const cy = y - 15;
+    ctx.save();
+    ctx.translate(x, cy);
+    ctx.scale(1, 1.8);
+    const glow = ctx.createRadialGradient(0, 0, 2, 0, 0, 12);
+    glow.addColorStop(0, palette.glow);
+    glow.addColorStop(1, palette.glowFade);
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(0, 0, 12, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
   oval(ctx, x, y, 5, 2, palette.shadow);
   if (options.player) {
     ctx.strokeStyle = palette.gold;
