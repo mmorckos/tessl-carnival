@@ -31,9 +31,10 @@ export const palette = {
   creamShade: '#e3d9c2',
   gold: colors.accent,
   goldShade: '#e0a91c',
-  // The player's glow: orange, since gold vanishes on the pale paths.
-  glow: 'rgba(255, 110, 40, 0.6)',
-  glowFade: 'rgba(255, 110, 40, 0)',
+  // The player's glow: a cool emerald, bluer than the yellow-green grass so it
+  // still shows there, and dark enough to show on the pale paths.
+  glow: 'rgba(0, 200, 120, 0.7)',
+  glowFade: 'rgba(0, 200, 120, 0)',
   blue: '#2b8ccc',
   blueShade: '#1f6aa0',
   sky2: colors.water,
